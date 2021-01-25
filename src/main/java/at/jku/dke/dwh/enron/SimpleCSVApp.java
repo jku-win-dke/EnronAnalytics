@@ -51,6 +51,7 @@ public class SimpleCSVApp {
 
         // Split the body by comma and return the size of the resulting array in a separate column
         df = df.withColumn("Words", split(col("Body"), " "))
+               .withColumn("Words", array_remove(col("Words"), "")) // remove empty entries resulting from consecutive spaces
                .withColumn("WordCount", size(col("Words")));
 
         // Print schema and contents of the dataframe
