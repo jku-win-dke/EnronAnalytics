@@ -34,7 +34,7 @@ public class EmailJob implements Job {
 	};
 
 	@Override
-	public void execute(JobExecutionContext context) W{
+	public void execute(JobExecutionContext context) {
 		JobDataMap data = context.getJobDetail().getJobDataMap();
 
 		File outputDirectory = (File) data.get("outputDirectory");
