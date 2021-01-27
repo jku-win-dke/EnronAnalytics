@@ -36,6 +36,11 @@ public class SimpleCSVApp {
                         false
                 ),
                 DataTypes.createStructField(
+                       "Timestamp",
+                        DataTypes.TimestampType,
+                       false
+                ),
+                DataTypes.createStructField(
                         "Body",
                         DataTypes.StringType,
                         true
