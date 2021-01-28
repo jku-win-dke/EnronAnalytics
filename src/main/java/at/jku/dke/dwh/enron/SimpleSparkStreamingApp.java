@@ -19,7 +19,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SimpleSparkStreamingApp {
-    private static final class StateAccumulatorFunction implements Function2<List<Integer>, Optional<Integer>, Optional<Integer>>, Serializable {
+    private static final class StateAccumulatorFunction
+            implements Function2<List<Integer>, Optional<Integer>, Optional<Integer>>, Serializable {
         @Override
         public Optional<Integer> call(List<Integer> values, Optional<Integer> state) throws Exception {
             Integer newState =
@@ -49,7 +50,7 @@ public class SimpleSparkStreamingApp {
             // We obtain a streaming context. The second argument specifies
             // that the time intervals at which Spark Streaming splits the
             // stream into mini batches. Here, the stream is split up into
-            // batches of 5 seconds worth of data.
+            // batches of 10 seconds worth of data.
             //
             // Note: We could also use StreamingContext and DStream instead
             // of the Java variants but since we use Java we use the Java-friendly
